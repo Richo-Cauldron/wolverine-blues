@@ -45,6 +45,23 @@ class StepOneModal extends Component
         }
     }
 
+    protected function messages()
+    {
+        if ($this->heading === 'Brand') {
+            return [
+                'name.required' => 'A Brand name is required',
+                'name.min' => 'The Brand name must be at least 2 characters',
+                'name.unique' => 'This Brand already exists'
+            ];
+        } elseif ($this->heading === 'Category') {
+            return [
+                'name.required' => 'A Category name is required',
+                'name.min' => 'The Category name must be at least 3 characters',
+                'name.unique' => 'This Category already exists'
+            ];
+        }
+    }
+
     public function save()
     {
         $this->validate();
