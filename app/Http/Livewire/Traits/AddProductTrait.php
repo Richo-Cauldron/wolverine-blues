@@ -22,26 +22,24 @@ trait AddProductTrait {
 
     public function setBrand($value)
     {
-        // dd($value);
         $this->brand = $value;
-        // dd($this->brand);
         $this->reset('brandResults');
     }
 
     public function setCategory($value)
     {
-        // dd($value);
         $this->category = $value;
-        // dd($this->brand);
         $this->reset('categoryResults');
     }
 
     public function firstStepSubmit()
     {
+        $this->reset('brandResults', 'categoryResults');
         $validatedData = $this->validate([
             'brand' => 'required|min:2',
             'category' => 'required|min:3'
         ]);
+        
         // $this->currentStep = 2;
     }
 
