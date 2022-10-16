@@ -21,8 +21,9 @@ class StepOneModal extends Component
 
     public function openModal($department, $heading)
     {
+        $this->reset('name');
+        $this->resetErrorBag();
         $this->showModal = true;
-        
         $this->department = $department;
         $this->heading = $heading;
     }
