@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Traits;
 
 use App\Models\GarmentBrand;
+use App\Models\GarmentCategory;
 use Livewire\WithFileUploads;
 
 
@@ -17,25 +18,41 @@ trait AddProductTrait {
     public $brandTitle = "Brand";
     public $categoryTitle = "Category";
 
-    public $brand, $category, $results;
+    public $brand, $category, $brandResults, $categoryResults;
 
     public function updatedBrand()
     {
-        $this->results = GarmentBrand::search($this->brand)->get();
+        $this->resetErrorBag('brand');
+        $this->brandResults = GarmentBrand::search($this->brand)->get();
     }
 
-    public function captureBrand($value)
+    public function updatedCategory()
+    {
+        $this->resetErrorBag('category');
+        $this->categoryResults = GarmentCategory::search($this->category)->get();
+    }
+
+    public function setBrand($value)
     {
         // dd($value);
         $this->brand = $value;
         // dd($this->brand);
-        $this->reset('results');
+        $this->reset('brandResults');
+    }
+
+    public function setCategory($value)
+    {
+        // dd($value);
+        $this->category = $value;
+        // dd($this->brand);
+        $this->reset('categoryResults');
     }
 
     public function firstStepSubmit()
     {
         $validatedData = $this->validate([
-            'brand' => 'required'
+            'brand' => 'required|min:2',
+            'category' => 'required|min:3'
         ]);
         // $this->currentStep = 2;
     }
