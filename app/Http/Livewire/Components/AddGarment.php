@@ -18,6 +18,7 @@ class AddGarment extends Component
 
     public function mount()
     {
+        $this->reset('brand', 'category');
         $this->brands = GarmentBrand::all();
         $this->categories = GarmentCategory::all();
     }
