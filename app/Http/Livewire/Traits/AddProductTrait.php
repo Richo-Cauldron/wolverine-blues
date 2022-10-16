@@ -20,18 +20,6 @@ trait AddProductTrait {
 
     public $brand, $category, $brandResults, $categoryResults;
 
-    public function updatedBrand()
-    {
-        $this->resetErrorBag('brand');
-        $this->brandResults = GarmentBrand::search($this->brand)->get();
-    }
-
-    public function updatedCategory()
-    {
-        $this->resetErrorBag('category');
-        $this->categoryResults = GarmentCategory::search($this->category)->get();
-    }
-
     public function setBrand($value)
     {
         // dd($value);
