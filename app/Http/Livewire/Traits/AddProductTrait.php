@@ -40,7 +40,9 @@ trait AddProductTrait {
             'category' => 'required|min:3'
         ]);
         
-        // $this->currentStep = 2;
+        $this->currentStep = 2;
+
+        // dd($this->currentStep);
     }
 
 }
