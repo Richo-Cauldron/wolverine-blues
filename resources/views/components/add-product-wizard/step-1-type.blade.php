@@ -1,16 +1,17 @@
 <!-- Wizard Step 1 - Product Type -->
+
 <div class=" {{ $this->currentStep != 1 ? 'hidden' : '' }}" id="step-1">
-    <p class="text-3xl font-semi-bold mb-6">Add {{ $this->productTitle }} Type:</p>
+    <p class="text-3xl font-semi-bold mb-6">Add {{ $productType }} Type:</p>
     <div class="mb-3">
-        <x-input-label for="brand">{{ $this->productTitle }} Brand:</x-input-label>
+        <x-input-label for="brand">{{ $productType }} Brand:</x-input-label>
         <div class="w-full">
             <div class="flex relative">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <x-svg.search-input-magnifying-glass />
                 </div>
-                <input wire:model="brand" type="text" class="w-full indent-6 rounded-md shadow border-gray-300 focus:border-blue-300  focus:ring-blue-200 focus:ring-opacity-50 focus:ring-1 " placeholder="{{ $this->productTitle }} Brand" required>
+                <input wire:model="brand" type="text" class="w-full indent-6 rounded-md shadow border-gray-300 focus:border-blue-300  focus:ring-blue-200 focus:ring-opacity-50 focus:ring-1 " placeholder="{{ $productType }} Brand" required>
                 <div class="flex items-center ml-4">
-                    <button wire:click="$emit('openModal', '{{ $this->productTitle }}', '{{ $this->brandTitle }}')" class="text-sm border border-gray-300 bg-gray-200 rounded px-2" >Add Brand</button>
+                    <button wire:click="$emit('openModal', '{{ $productType }}', '{{ $brand }}')" class="text-sm border border-gray-300 bg-gray-200 rounded px-2" >Add Brand</button>
                 </div>
             </div>
         </div>
@@ -32,15 +33,15 @@
         @error('brand') <span class="error text-red-500">*{{ $message }}</span> @enderror
     </div>
     <div class="mb-3">
-        <x-input-label for="category">{{ $this->productTitle }} Category:</x-input-label>
+        <x-input-label for="category">{{ $productType }} Category:</x-input-label>
         <div class="w-full">
             <div class="flex relative">
                 <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                     <x-svg.search-input-magnifying-glass />
                 </div>
-                <input wire:model="category" type="text" class="w-full indent-6 rounded-md shadow border-gray-300 focus:border-blue-300  focus:ring-blue-200 focus:ring-opacity-50 focus:ring-1 " placeholder="{{ $this->productTitle }} Category" required>
+                <input wire:model="category" type="text" class="w-full indent-6 rounded-md shadow border-gray-300 focus:border-blue-300  focus:ring-blue-200 focus:ring-opacity-50 focus:ring-1 " placeholder="{{ $productType }} Category" required>
                 <div class="flex items-center ml-4">
-                    <button wire:click="$emit('openModal', '{{ $this->productTitle }}', '{{ $this->categoryTitle }}')" class="text-sm border border-gray-300 bg-gray-200 rounded px-2" >Add Category</button>
+                    <button wire:click="$emit('openModal', '{{ $productType }}', '{{ $category }}')" class="text-sm border border-gray-300 bg-gray-200 rounded px-2" >Add Category</button>
                 </div>
             </div>
         </div>

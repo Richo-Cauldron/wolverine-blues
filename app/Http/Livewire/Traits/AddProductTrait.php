@@ -15,8 +15,8 @@ trait AddProductTrait {
 
     public $successMsg = '';
 
-    public $brandTitle = "Brand";
-    public $categoryTitle = "Category";
+    // public $brandTitle = "Brand";
+    // public $categoryTitle = "Category";
 
     public $brand, $category, $brandResults, $categoryResults;
 

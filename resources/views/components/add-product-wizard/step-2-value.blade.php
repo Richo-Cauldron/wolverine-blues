@@ -1,8 +1,8 @@
 <!-- Wizard Step 2 - Product Value -->
 <div class=" {{ $this->currentStep != 2 ? 'hidden' : '' }}" id="step-2">
-    <p class="text-3xl font-semi-bold mb-6">{{ $this->productTitle }} Price Range</p>
+    <p class="text-3xl font-semi-bold mb-6">{{ $productType }} Price Range</p>
     <div class="mb-3">
-        <x-input-label for="value_min">{{ $this->productTitle }} Valued Minimum Price:</x-input-label>
+        <x-input-label for="value_min">{{ $productType }} Valued Minimum Price:</x-input-label>
         <div class="flex">
             <span class="mt-1 p-1 text-gray-600">$</span>
             <x-text-input type="number" min="0" wire:model="value_min" class="w-full text-gray-700 focus:shadow-outline focus:ring-1" id="value_min"/>
@@ -10,7 +10,7 @@
         @error('value_min') <span class="error text-red-500">*{{ $message }}</span> @enderror
     </div>
     <div class="mb-3">
-        <x-input-label for="value_max">{{ $this->productTitle }} Valued Maximum Price:</x-input-label>
+        <x-input-label for="value_max">{{ $productType }} Valued Maximum Price:</x-input-label>
         <div class="flex">
             <span class="mt-1 p-1 text-gray-600">$</span>
             <x-text-input type="number" min="0" wire:model="value_max" class="w-full text-gray-700 focus:shadow-outline focus:ring-1" id="value_max" />
@@ -18,7 +18,7 @@
         @error('value_max') <span class="error text-red-500">*{{ $message }}</span> @enderror
     </div>
     <div class="mb-3">
-        <x-input-label for="sale_price">{{ $this->productTitle }} Sale Price:</x-input-label>
+        <x-input-label for="sale_price">{{ $productType }} Sale Price:</x-input-label>
         <div class="flex">
             <span class="mt-1 p-1 text-gray-600">$</span>
             <x-text-input type="number" min="0" wire:model="sale_price" class="w-full text-gray-700 focus:shadow-outline focus:ring-1" id="sale_price" />
