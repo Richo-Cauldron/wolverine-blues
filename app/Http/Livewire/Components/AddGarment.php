@@ -11,7 +11,7 @@ class AddGarment extends Component
 {
     use AddProductTrait;
 
-    public $product = "garment";
+    // public $product = "garment";
     // public $productTitle = "Garment";
 
     protected $listeners = ['updateCategories' => 'mount'];
