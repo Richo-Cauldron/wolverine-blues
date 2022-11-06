@@ -18,7 +18,10 @@ trait AddProductTrait {
     // public $brandTitle = "Brand";
     // public $categoryTitle = "Category";
 
+    // Step 1-5 wire:model variables
     public $brand, $category, $brandResults, $categoryResults;
+    public $valueMin, $valueMax, $salePrice;
+    public $details, $reference;
 
     public function setBrand($value)
     {
@@ -39,10 +42,37 @@ trait AddProductTrait {
             'brand' => 'required|min:2',
             'category' => 'required|min:3'
         ]);
+        // dd($validatedData);
         
         $this->currentStep = 2;
+    }
 
-        // dd($this->currentStep);
+    public function secondStepSubmit()
+    {
+        $validatedData = $this->validate([
+            'valueMin' => 'required_if:valueMax,=,null',
+            'valueMax' => 'required_if:valueMin,=,null',
+            'salePrice' => 'required'
+        ]);
+        // dd($validatedData);
+
+        $this->currentStep = 3;
+    }
+
+    public function thirdStepSubmit()
+    {
+        $validatedData = $this->validate([
+            'details' => 'required',
+            'reference' => 'required'
+        ]);
+        dd($validatedData);
+
+        $this->currentStep = 4;
+    }
+
+    public function back($step)
+    {
+        $this->currentStep = $step;    
     }
 
 }
