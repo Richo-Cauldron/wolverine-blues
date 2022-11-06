@@ -1,4 +1,5 @@
 <!-- Wizard Step 2 - Product Value -->
+@aware(['productType'])
 <div class=" {{ $this->currentStep != 2 ? 'hidden' : '' }}" id="step-2">
     <p class="text-3xl font-semi-bold mb-6">{{ $productType }} Price Range</p>
     <div class="mb-3">

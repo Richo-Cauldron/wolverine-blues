@@ -1,4 +1,6 @@
 <!-- Wizard Progress Bar -->
+@aware(['productType'])
+
 @php
     $steps = ['Type', 'Value', 'Details', 'Image', 'Save'];
 @endphp
