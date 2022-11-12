@@ -65,7 +65,7 @@ trait AddProductTrait {
             'details' => 'required',
             'reference' => 'required'
         ]);
-        dd($validatedData);
+        // dd($validatedData);
 
         $this->currentStep = 4;
     }
