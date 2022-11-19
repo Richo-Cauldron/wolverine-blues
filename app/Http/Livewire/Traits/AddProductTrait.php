@@ -23,7 +23,7 @@ trait AddProductTrait {
     // Step 3 wire:model variables
     public $details, $reference;
     // Step 4 wire:model variables
-    public $imageTitle, $image;
+    public $imageTitle, $image, $imageFile;
 
     public function setBrand($value)
     {
@@ -98,14 +98,29 @@ trait AddProductTrait {
             $extension = pathinfo($imagePath, PATHINFO_EXTENSION);
             // dd($imagePath);
 
-            $newImageFilePath = date('d-m-y') . '-' . $newImageTitle . '.' . $extension;
+            $this->imageFile = date('d-m-y') . '-' . $newImageTitle . '.' . $extension;
             // dd($newImageFilePath);
 
-            $this->image->storeAs('images/'. $imageSubFolder, $newImageFilePath, 'public');
+            $this->image->storeAs('images/'. $imageSubFolder, $this->imageFile, 'public');
         }
 
         $this->currentStep = 5;
         
+    }
+
+    public function submitForm()
+    {
+        // Product::create([
+        //     'name' => $this->name,
+        //     'price' => $this->price,
+        //     'detail' => $this->detail,
+        // ]);
+  
+        // $this->successMsg = 'Product successfully created.';
+  
+        // $this->clearForm();
+  
+        // $this->currentStep = 1;
     }
 
     public function updatedImage()
