@@ -82,7 +82,8 @@
                 </div>
             </div>
         </div>
-        <button class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 focus:outline-none  dark:focus:ring-green-800" wire:click="submitForm" type="button">Submit</button>
-        <button class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-8 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button" wire:click="back(4)">Back</button>
+
+        <x-add-product-wizard.next-step-button nextStep="submitForm" />
+        <x-add-product-wizard.back-step-button backStep="4" />
     </div>
 </div> 
