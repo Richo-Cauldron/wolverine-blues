@@ -2,7 +2,7 @@
 @aware(['productType'])
 
 @php
-    $steps = ['Type', 'Value', 'Details', 'Image', 'Save'];
+    $steps = ['Type', 'Value', 'Details', 'Image', 'Submit'];
 @endphp
 
 <div class="table relative w-full mb-8">

@@ -28,15 +28,4 @@ class AddGarment extends Component
         return view('livewire.components.add-garment');
     }
 
-    public function updatedBrand()
-    {
-        $this->resetErrorBag('brand');
-        $this->brandResults = GarmentBrand::search($this->brand)->get();
-    }
-
-    public function updatedCategory()
-    {
-        $this->resetErrorBag('category');
-        $this->categoryResults = GarmentCategory::search($this->category)->get();
-    }
 }

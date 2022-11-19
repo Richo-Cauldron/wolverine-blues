@@ -63,6 +63,8 @@
         </div>
         @error('category') <span class="error text-red-500">*{{ $message }}</span> @enderror
     </div>
-    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none  dark:focus:ring-blue-800" wire:click="firstStepSubmit" type="button">Next</button>
+
+    <x-add-product-wizard.next-step-button nextStep="firstStepSubmit"/>
+    
     @livewire('components.modals.step-one-modal')
 </div>
