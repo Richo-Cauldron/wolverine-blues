@@ -60,7 +60,7 @@
                                 </tr>
                                 <tr class="bg-white border-b">
                                     <td class="px-6 py-2 whitespace-nowrap text-sm font-bold text-gray-600">{{$productType}} Details:</td>
-                                    <td  class="text-sm text-gray-900 font-light px-6 py-2 text-justify whitespace-normal w-9/12">
+                                    <td  class="text-sm text-gray-900 font-light px-6 py-2 text-center whitespace-normal w-9/12">
                                         {{ $this->details }}
                                     </td>
                                 </tr>
@@ -82,8 +82,7 @@
                 </div>
             </div>
         </div>
+        <x-add-product-wizard.next-step-button nextStep="submitProduct" />
 
-        <x-add-product-wizard.next-step-button nextStep="submitForm" />
-        <x-add-product-wizard.back-step-button backStep="4" />
-    </div>
+        <x-add-product-wizard.back-step-button backStep="4" />    </div>
 </div> 

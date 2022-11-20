@@ -27,4 +27,9 @@ class AddGarment extends Component
         return view('livewire.components.add-garment');
     }
 
+    public function submitProduct()
+    {
+        dd('made it to submitProduct()');
+    }
+
 }
