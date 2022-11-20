@@ -74,6 +74,8 @@ trait AddProductTrait {
     
     public function fourthStepSubmit($productType)
     {
+        // dd($productType);
+
         $imageSubFolder = Str::plural(strtolower($productType));
         //dd($imageSubFolder);
         

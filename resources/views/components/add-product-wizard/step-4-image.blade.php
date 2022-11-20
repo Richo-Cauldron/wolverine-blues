@@ -36,6 +36,7 @@
             </div> 
             <div class="mt-3">
                 <x-add-product-wizard.next-step-button nextStep="fourthStepSubmit" />
+
                 <x-add-product-wizard.back-step-button backStep="3" />
             </div>
         {{-- </form> --}}

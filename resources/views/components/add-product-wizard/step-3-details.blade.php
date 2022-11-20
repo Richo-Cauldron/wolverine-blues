@@ -18,6 +18,5 @@
 
         <x-add-product-wizard.next-step-button nextStep="thirdStepSubmit" />
 
-        <x-add-product-wizard.back-step-button backStep="2" />
-    </div>
+        <x-add-product-wizard.back-step-button backStep="2" />    </div>
 </div> 
